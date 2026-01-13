@@ -1,24 +1,28 @@
 "use client";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Layout from "../components/layouts";
 import { GlobalProvider } from "@/providers/GlobalContext";
 import "react-multi-carousel/lib/styles.css";
-import { WalletProvider, ConnectionProvider } from '@solana/wallet-adapter-react';
-import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { WalletProvider, ConnectionProvider } from "@solana/wallet-adapter-react";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import "@solana/wallet-adapter-react-ui/styles.css";
-import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';
-import { clusterApiUrl } from '@solana/web3.js';
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";
+import { clusterApiUrl } from "@solana/web3.js";
 import { ToastContainer } from "react-toastify";
 
-const geistSans = Geist({
+const geistSans = localFont({
+  src: "../../public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
+  style: "normal",
 });
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "../../public/fonts/Rubik/Rubik-VariableFont_wght.ttf",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
+  style: "normal",
 });
 
 export default function RootLayout({
